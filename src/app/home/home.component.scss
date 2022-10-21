@@ -1,0 +1,84 @@
+$font-size: 40px;
+$line: black;
+
+$width-v: 10px;
+$height-v: 450px;
+
+$width-h: 450px;
+$height-h: 10px;
+$bor-rad: 20px;
+
+*{
+    margin:0;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-bottom: -10px;
+
+}
+
+.container{
+    background: linear-gradient(pink, yellow);
+    height: 100vh;
+    width: 202vh;
+}
+
+.main{
+    height: 100vh;
+    width: 100vh;
+    text-align: center;
+    margin-left: 40px;
+}
+
+.v1{
+    background-color: $line;
+    background-color: black;
+    width: $width-v;
+    height: $height-v;
+    border-radius: $bor-rad;
+    position: absolute;
+    margin-left: 400px;
+}
+
+.v2{
+    background-color: $line;
+    width: $width-v;
+    height: $height-v;
+    border-radius: $bor-rad;
+    position: absolute;
+    margin-left: 550px;
+}
+
+.h1{
+    background-color: $line;
+    width: $width-h;
+    height: $height-h;
+    border-radius: $bor-rad;
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 140px;
+}
+
+.h2{
+    background-color: $line;
+    width: $width-h;
+    height: $height-h;
+    border-radius: $bor-rad;
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 290px;
+}
+
+.title{
+    font-size: 60px;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 50px;
+    text-align: center;
+    margin-left: 320px;
+}
+
+.points{
+    font-size: $font-size;
+    margin-left: 850px;
+    width: max-content;
+}
