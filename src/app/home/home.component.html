@@ -6,22 +6,51 @@
 
         <div class="main">
             <p class="title">Tic-Tac-Toe</p>
-
-            <div class="vertical">
+<!-- 
+            <div class="row1">
                 <div class="v1"></div>
-                <div class="v2"></div>    
+                <div class="v2"></div>
             </div>
+
+            <button class="b1">{{value}}</button>
+            <button class="b1">{{value}}</button>
+            <button class="b1">{{value}}</button>
+            <button class="b1">{{value}}</button>
+            <button class="b1">{{value}}</button>
+            <button class="b1">{{value}}</button>
+            <button class="b1">{{value}}</button>
+            <button class="b1">{{value}}</button>
+            <button class="b1">{{value}}</button>
 
             <div class="horizontal">
                 <div class="h1"></div>
                 <div class="h2"></div>    
             </div>
-
+-->
             <div class="points">
                 <p>You: {{you}}</p>
                 <p>Opponent: {{opponent}}</p>
-            </div>
+            </div> 
             
+            <div class="board">
+                <div class="row1">
+                    <div class="cell1" (click)="show1()" id="one">{{value1}}</div>
+                    <div class="cell2" (click)="show2()">{{value2}}</div>
+                    <div class="cell3" (click)="show3()">{{value3}}</div>
+                </div>
+                
+                <div class="row1">
+                    <div class="cell4" (click)="show4()">{{value4}}</div>
+                    <div class="cell5" (click)="show5()">{{value5}}</div>
+                    <div class="cell6" (click)="show6()">{{value6}}</div>
+                </div>
+
+                <div class="row1">
+                    <div class="cell7" (click)="show7()">{{value7}}</div>
+                    <div class="cell8" (click)="show8()">{{value8}}</div>
+                    <div class="cell9" (click)="show9()">{{value9}}</div>
+                </div>
+            </div>
             
         </div>
     </body>

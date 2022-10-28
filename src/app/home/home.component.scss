@@ -17,7 +17,7 @@ $bor-rad: 20px;
 }
 
 .container{
-    background: linear-gradient(pink, yellow);
+    background: linear-gradient(90deg, #000428, #004e92);
     height: 100vh;
     width: 202vh;
 }
@@ -29,56 +29,231 @@ $bor-rad: 20px;
     margin-left: 40px;
 }
 
-.v1{
-    background-color: $line;
-    background-color: black;
-    width: $width-v;
-    height: $height-v;
-    border-radius: $bor-rad;
-    position: absolute;
-    margin-left: 400px;
-}
+// .v1{
+//     background-color: $line;
+//     background-color: black;
+//     width: $width-v;
+//     height: $height-v;
+//     border-radius: $bor-rad;
+//     position: absolute;
+//     margin-left: 400px;
+// }
 
-.v2{
-    background-color: $line;
-    width: $width-v;
-    height: $height-v;
-    border-radius: $bor-rad;
-    position: absolute;
-    margin-left: 550px;
-}
+// .v2{
+//     background-color: $line;
+//     width: $width-v;
+//     height: $height-v;
+//     border-radius: $bor-rad;
+//     position: absolute;
+//     margin-left: 550px;
+// }
 
-.h1{
-    background-color: $line;
-    width: $width-h;
-    height: $height-h;
-    border-radius: $bor-rad;
-    position: absolute;
-    margin-left: 250px;
-    margin-top: 140px;
-}
+// .h1{
+//     background-color: $line;
+//     width: $width-h;
+//     height: $height-h;
+//     border-radius: $bor-rad;
+//     position: absolute;
+//     margin-left: 250px;
+//     margin-top: 140px;
+// }
 
-.h2{
-    background-color: $line;
-    width: $width-h;
-    height: $height-h;
-    border-radius: $bor-rad;
-    position: absolute;
-    margin-left: 250px;
-    margin-top: 290px;
-}
+// .h2{
+//     background-color: $line;
+//     width: $width-h;
+//     height: $height-h;
+//     border-radius: $bor-rad;
+//     position: absolute;
+//     margin-left: 250px;
+//     margin-top: 290px;
+// }
 
 .title{
     font-size: 60px;
-    color: black;
+    color: white;
     font-family: 'Times New Roman', Times, serif;
     margin-bottom: 50px;
     text-align: center;
     margin-left: 320px;
 }
 
+.cell1{
+    border-right: 10px solid white;
+    border-bottom: 10px solid white;
+    width: 120px;
+    height: 120px;
+    margin-left: 400px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 100px;
+    color: white;
+
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.447);
+    }
+}
+
+.cell2{
+    border-right: 10px solid white;
+    border-bottom: 10px solid white;
+    border-left: 10px solid white;
+    width: 120px;
+    height: 120px;
+    margin-left: 520px;
+    margin-top: -130px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+    
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.447);
+    }
+
+}
+
+.cell3{
+    border-bottom: 10px solid white;
+    border-left: 10px solid white;
+    width: 120px;
+    height: 120px;
+    margin-left: 650px;
+    margin-top: -130px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 100px;
+    color: white;
+
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.447);
+    }
+
+}
+
+.cell4{
+    border-right: 10px solid white;
+    border-bottom: 10px solid white;
+    width: 120px;
+    height: 120px;
+    margin-left: 400px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 100px;
+    color: white;
+
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.447);
+    }
+}
+
+.cell5{
+    width: 120px;
+    height: 120px;
+    margin-left: 520px;
+    margin-top: -130px;
+    border-bottom: 10px solid white;
+    border-right: 10px solid white;
+    border-left: 10px solid white;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 100px;
+    color: white;
+
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.447);
+    }
+}
+
+.cell6{
+    border-bottom: 10px solid white;
+    border-left: 10px solid white;
+    width: 120px;
+    height: 120px;
+    margin-left: 650px;
+    margin-top: -130px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 100px;
+    color: white;
+
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.447);
+    }
+}
+
+.cell7{
+    border-right: 10px solid white;
+    width: 120px;
+    height: 120px;
+    margin-left: 400px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 100px;
+    color: white;
+
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.447);
+    }
+}
+
+.cell8{
+    border-right: 10px solid white;
+    border-left: 10px solid white;
+    width: 120px;
+    height: 120px;
+    margin-left: 520px;
+    margin-top: -120px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 100px;
+    color: white;
+
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.447);
+    }
+}
+
+.cell9{
+    width: 120px;
+    height: 120px;
+    margin-left: 650px;
+    margin-top: -120px;
+    cursor: pointer;
+    border-radius: 10px;
+    border-left: 10px solid white;
+    font-size: 100px;
+    color: white;
+
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.447);
+    }
+}
+
 .points{
     font-size: $font-size;
     margin-left: 850px;
     width: max-content;
+    color: white;
 }
+
+.board{
+    margin-left: -100px;
+    margin-top: -50px;
+}
+
+// .b1{
+//     width:140px;
+//     height:140px;
+//     background: transparent;
+//     position: absolute;
+//     margin-left: -80px;
+//     border: none;
+//     cursor: pointer;
+// }
+
+// .b1:hover{
+//     background-color: rgba(255, 255, 255, 0.18);
+// }
