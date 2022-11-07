@@ -9,21 +9,20 @@ export class HomeComponent implements OnInit {
 
   opponent : any = 0;
   you : number = 0;
+  current : number = 0;
 
   constructor() { }
 
-  c1 = document.body.querySelector("cell1")?.addEventListener("click", this.show1);
-  c2 = document.body.querySelector("cell2")?.addEventListener("click", this.show2);
-  c3 = document.body.querySelector("cell3")?.addEventListener("click", this.show3);
-  c4 = document.body.querySelector("cell4")?.addEventListener("click", this.show4);
-  c5 = document.body.querySelector("cell5")?.addEventListener("click", this.show5);
-  c6 = document.body.querySelector("cell6")?.addEventListener("click", this.show6);
-  c7 = document.body.querySelector("cell7")?.addEventListener("click", this.show7);
-  c8 = document.body.querySelector("cell8")?.addEventListener("click", this.show8);
-  c9 = document.body.querySelector("cell9")?.addEventListener("click", this.show9);
+  // c1 = document.body.querySelector("cell1") as any;
+  // c2 = document.body.querySelector("cell2") as any;
+  // c3 = document.body.querySelector("cell3") as any;
+  // c4 = document.body.querySelector("cell4") as any;
+  // c5 = document.body.querySelector("cell5") as any;
+  // c6 = document.body.querySelector("cell6") as any;
+  // c7 = document.body.querySelector("cell7") as any;
+  // c8 = document.body.querySelector("cell8") as any;
+  // c9 = document.body.querySelector("cell9") as any;
 
-  value1 : any = "";
-  value2 : any = "";
   value3 : any = "";
   value4 : any = "";
   value5 : any = "";
@@ -34,159 +33,216 @@ export class HomeComponent implements OnInit {
 
   element : any;
 
-  arr : any[] = ["X", "O"];
+  arr : any = ["X", "O"];
 
-  val : any;
+  val : any = "X";
 
   show1(){
-      if(this.value1 === ""){
-        this.value1 = this.arr[Math.floor(Math.random()*this.arr.length)];
-        this.element = this.value1;
+      if(this.current == 0){
+        this.element = this.val;
+        document.querySelector('.cell1')!.innerHTML = this.element;
+        this.current++;
       }
+      else if(document.querySelector('.cell1')!.innerHTML == ""){
+        if(this.element === "X"){
+          document.querySelector('.cell1')!.innerHTML = "O";
+        }
+        else{
+          document.querySelector('.cell1')!.innerHTML = "X";
+          this.element = document.querySelector('.cell1')!.innerHTML;
+        }
+      }  
+      this.current++;
       this.finish();
   }
-  show2(){
-    if(this.element === "X"){
-      this.value2 = "O"
-      this.element = this.value2;
-    }
-    else{
-      this.value2 = "X"
-      this.element = this.value2;
-    }
-    this.finish();
 
-  }
-  show3(){
-    if(this.element === "X"){
-      this.value3 = "O"
-      this.element = this.value3;
+  show2(){
+    if(this.current == 0){
+      this.element = this.val;
+      document.querySelector('.cell2')!.innerHTML = this.element;
+      this.current++;
     }
-    else{
-      this.value3 = "X"
-      this.element = this.value3;
-    }     
-    this.finish();
-  
+    if(document.querySelector('.cell2')!.innerHTML == ""){
+      if(this.element === "X"){
+        document.querySelector('.cell2')!.innerHTML = "O";
+      }
+      else{
+        document.querySelector('.cell2')!.innerHTML = "X";
+        this.element = document.querySelector('.cell2')!.innerHTML;
+      }
+      this.current++;
+      this.finish();  
+    }
+  }
+
+  show3(){
+    if(this.current == 0){
+      this.element = this.val;
+       document.querySelector('.cell3')!.innerHTML = this.element;
+      this.current++;
+    }
+    if( document.querySelector('.cell3')!.innerHTML == ""){
+      if(this.element === "X"){
+         document.querySelector('.cell3')!.innerHTML = "O"
+        this.element =  document.querySelector('.cell3')!.innerHTML;
+      }
+      else{
+         document.querySelector('.cell3')!.innerHTML = "X"
+        this.element =  document.querySelector('.cell3')!.innerHTML;
+      }
+      this.current++;
+      this.finish();
+    }
   }
   show4(){
-    if(this.element === "X"){
-      this.value4 = "O"
-      this.element = this.value4;
+    if(this.current == 0){
+      this.element = this.val;
+       document.querySelector('.cell4')!.innerHTML = this.element;
+      this.current++;
     }
-    else{
-      this.value4 = "X"
-      this.element = this.value4;
+    if( document.querySelector('.cell4')!.innerHTML == ""){
+      if(this.element === "X"){
+         document.querySelector('.cell4')!.innerHTML = "O"
+        this.element =  document.querySelector('.cell4')!.innerHTML;
+      }
+      else{
+         document.querySelector('.cell4')!.innerHTML = "X"
+        this.element =  document.querySelector('.cell4')!.innerHTML;
+      }
+      this.current++;
+      this.finish();
     }
-    this.finish();
-
   }
   show5(){
-    if(this.element === "X"){
-      this.value5 = "O"
-      this.element = this.value5;
+    if(this.current == 0){
+      this.element = this.val;
+       document.querySelector('.cell5')!.innerHTML = this.element;
+      this.current++;
     }
-    else{
-      this.value5 = "X"
-      this.element = this.value5;
-    }  
-    this.finish();
-      
+    if( document.querySelector('.cell5')!.innerHTML == ""){
+      if(this.element === "X"){
+         document.querySelector('.cell5')!.innerHTML = "O"
+        this.element =  document.querySelector('.cell5')!.innerHTML;
+      }
+      else{
+         document.querySelector('.cell5')!.innerHTML = "X"
+        this.element =  document.querySelector('.cell5')!.innerHTML;
+      }
+      this.current++;
+      this.finish();
+    }
   }
   show6(){
-    if(this.element === "X"){
-      this.value6 = "O"
-      this.element = this.value6;
+    if(this.current == 0){
+      this.element = this.val;
+       document.querySelector('.cell6')!.innerHTML = this.element;
+      this.current++;
     }
-    else{
-      this.value6 = "X"
-      this.element = this.value6;
+    if( document.querySelector('.cell6')!.innerHTML == ""){
+      if(this.element === "X"){
+         document.querySelector('.cell6')!.innerHTML = "O"
+        this.element =  document.querySelector('.cell6')!.innerHTML;
+      }
+      else{
+         document.querySelector('.cell6')!.innerHTML = "X"
+        this.element =  document.querySelector('.cell6')!.innerHTML;
+      }
+      this.current++;
+      this.finish();
     }
-    this.finish();
-
   }
   show7(){
-    if(this.element === "X"){
-      this.value7 = "O"
-      this.element = this.value7;
+    if(this.current == 0){
+      this.element = this.val;
+       document.querySelector('.cell7')!.innerHTML = this.element;
+      this.current++;
     }
-    else{
-      this.value7 = "X"
-      this.element = this.value7;
-    } 
-    this.finish();
- 
+    if( document.querySelector('.cell7')!.innerHTML == ""){
+      if(this.element === "X"){
+         document.querySelector('.cell7')!.innerHTML = "O"
+        this.element =  document.querySelector('.cell7')!.innerHTML;
+      }
+      else{
+         document.querySelector('.cell7')!.innerHTML = "X"
+        this.element =  document.querySelector('.cell7')!.innerHTML;
+      }
+      this.current++;
+      this.finish();
+    }
   }
   show8(){
-    if(this.element === "X"){
-      this.value8 = "O"
-      this.element = this.value8;
+    if(this.current == 0){
+      this.element = this.val;
+       document.querySelector('.cell8')!.innerHTML = this.element;
+      this.current++;
     }
-    else{
-      this.value8 = "X"
-      this.element = this.value8;
-    }   
-    this.finish();
-
+    if( document.querySelector('.cell8')!.innerHTML == ""){
+      if(this.element === "X"){
+         document.querySelector('.cell8')!.innerHTML = "O"
+        this.element =  document.querySelector('.cell8')!.innerHTML;
+      }
+      else{
+         document.querySelector('.cell8')!.innerHTML = "X"
+        this.element =  document.querySelector('.cell8')!.innerHTML;
+      }
+      this.current++; 
+      this.finish();
+    }
   }
   show9(){
-    if(this.element === "X"){
-      this.value9 = "O"
-      this.element = this.value9;
+    if(this.current == 0){
+      this.element = this.val;
+       document.querySelector('.cell9')!.innerHTML = this.element;
+      this.current++;
     }
-    else{
-      this.value9 = "X"
-      this.element = this.value9;
-    }    
-    this.finish();
-     
+    if( document.querySelector('.cell9')!.innerHTML == ""){
+      if(this.element === "X"){
+         document.querySelector('.cell9')!.innerHTML = "O"
+        this.element =  document.querySelector('.cell9')!.innerHTML;
+      }
+      else{
+         document.querySelector('.cell9')!.innerHTML = "X"
+        this.element =  document.querySelector('.cell9')!.innerHTML;
+      }
+      this.current++; 
+      this.finish();
+    }
   }
 
   finish(){
-    if(((this.value1 !== "" && this.value2 !== "" && this.value3 !== "") && (this.value1 === this.value2 && this.value2 === this.value3)) || 
-    ((this.value4 !== "" && this.value5 !== "" && this.value6 !== "") && (this.value4 === this.value5 && this.value5 === this.value6)) || 
-    ((this.value7 !== "" && this.value8 !== "" && this.value9 !== "") && (this.value7 === this.value8 && this.value8 === this.value9)) || 
-    ((this.value1 !== "" && this.value4 !== "" && this.value7 !== "") && (this.value1 === this.value4 && this.value4 === this.value7)) || 
-    ((this.value2 !== "" && this.value5 !== "" && this.value8 !== "") && (this.value2 === this.value5 && this.value5 === this.value8)) || 
-    ((this.value3 !== "" && this.value6 !== "" && this.value9 !== "") && (this.value3 === this.value6 && this.value6 === this.value9)) ||
-    ((this.value1 !== "" && this.value5 !== "" && this.value9 !== "") && (this.value1 === this.value5 && this.value5 === this.value9)) ||
-    ((this.value3 !== "" && this.value5 !== "" && this.value7 !== "") && (this.value3 === this.value5 && this.value5 === this.value7))
-    ){
-      alert("WIN");
-      this.value1 = "";
-      this.value2 = "";
-      this.value3 = "";
-      this.value4 = "";
-      this.value5 = "";
-      this.value6 = "";
-      this.value7 = "";
-      this.value8 = "";
-      this.value9 = "";
-      this.you = this.you + 1;
-    }
-    else if(((this.value1 !== "" && this.value2 !== "" && this.value3 !== "") && (this.value1 !== this.value2 && this.value2 !== this.value3)) && 
-    ((this.value4 !== "" && this.value5 !== "" && this.value6 !== "") && (this.value4 !== this.value5 && this.value5 !== this.value6)) && 
-    ((this.value7 !== "" && this.value8 !== "" && this.value9 !== "") && (this.value7 !== this.value8 && this.value8 !== this.value9)) && 
-    ((this.value1 !== "" && this.value4 !== "" && this.value7 !== "") && (this.value1 !== this.value4 && this.value4 !== this.value7)) && 
-    ((this.value2 !== "" && this.value5 !== "" && this.value8 !== "") && (this.value2 !== this.value5 && this.value5 !== this.value8)) && 
-    ((this.value3 !== "" && this.value6 !== "" && this.value9 !== "") && (this.value3 !== this.value6 && this.value6 !== this.value9)) &&
-    ((this.value1 !== "" && this.value5 !== "" && this.value9 !== "") && (this.value1 !== this.value5 && this.value5 !== this.value9)) &&
-    ((this.value3 !== "" && this.value5 !== "" && this.value7 !== "") && (this.value3 !== this.value5 && this.value5 !== this.value7))
-    ){
-      alert("Draw");
-      this.value1 = "";
-      this.value2 = "";
-      this.value3 = "";
-      this.value4 = "";
-      this.value5 = "";
-      this.value6 = "";
-      this.value7 = "";
-      this.value8 = "";
-      this.value9 = "";
-    }
+      if((
+        (document.querySelector('.cell1')!.innerHTML !== "" &&  document.querySelector('.cell2')!.innerHTML !== "" &&  document.querySelector('.cell3')!.innerHTML !== "") && 
+      (document.querySelector('.cell1')!.innerHTML ===  document.querySelector('.cell2')!.innerHTML &&  document.querySelector('.cell2')!.innerHTML ===  document.querySelector('.cell3')!.innerHTML)) || 
+      (( document.querySelector('.cell4')!.innerHTML !== "" &&  document.querySelector('.cell5')!.innerHTML !== "" &&  document.querySelector('.cell6')!.innerHTML !== "") && ( document.querySelector('.cell4')!.innerHTML ===  document.querySelector('.cell5')!.innerHTML &&  document.querySelector('.cell5')!.innerHTML ===  document.querySelector('.cell6')!.innerHTML)) || 
+      (( document.querySelector('.cell7')!.innerHTML !== "" &&  document.querySelector('.cell8')!.innerHTML !== "" &&  document.querySelector('.cell9')!.innerHTML !== "") && ( document.querySelector('.cell7')!.innerHTML ===  document.querySelector('.cell8')!.innerHTML &&  document.querySelector('.cell8')!.innerHTML ===  document.querySelector('.cell9')!.innerHTML)) || 
+      ((document.querySelector('.cell1')!.innerHTML !== "" &&  document.querySelector('.cell4')!.innerHTML !== "" &&  document.querySelector('.cell7')!.innerHTML !== "") && (document.querySelector('.cell1')!.innerHTML ===  document.querySelector('.cell4')!.innerHTML &&  document.querySelector('.cell4')!.innerHTML ===  document.querySelector('.cell7')!.innerHTML)) || 
+      (( document.querySelector('.cell2')!.innerHTML !== "" &&  document.querySelector('.cell5')!.innerHTML !== "" &&  document.querySelector('.cell8')!.innerHTML !== "") && ( document.querySelector('.cell2')!.innerHTML ===  document.querySelector('.cell5')!.innerHTML &&  document.querySelector('.cell5')!.innerHTML ===  document.querySelector('.cell8')!.innerHTML)) || 
+      (( document.querySelector('.cell3')!.innerHTML !== "" &&  document.querySelector('.cell6')!.innerHTML !== "" &&  document.querySelector('.cell9')!.innerHTML !== "") && ( document.querySelector('.cell3')!.innerHTML ===  document.querySelector('.cell6')!.innerHTML &&  document.querySelector('.cell6')!.innerHTML ===  document.querySelector('.cell9')!.innerHTML)) ||
+      ((document.querySelector('.cell1')!.innerHTML !== "" &&  document.querySelector('.cell5')!.innerHTML !== "" &&  document.querySelector('.cell9')!.innerHTML !== "") && (document.querySelector('.cell1')!.innerHTML ===  document.querySelector('.cell5')!.innerHTML &&  document.querySelector('.cell5')!.innerHTML ===  document.querySelector('.cell9')!.innerHTML)) ||
+      (( document.querySelector('.cell3')!.innerHTML !== "" &&  document.querySelector('.cell5')!.innerHTML !== "" &&  document.querySelector('.cell7')!.innerHTML !== "") && ( document.querySelector('.cell3')!.innerHTML ===  document.querySelector('.cell5')!.innerHTML &&  document.querySelector('.cell5')!.innerHTML ===  document.querySelector('.cell7')!.innerHTML))
+      ){
+        console.log("WIN");
+        // this.restart();
+        this.you = this.you + 1;
+      }
+      else if(this.current == 9){
+        console.log("Draw");
+        // this.restart();
+      }
   }
 
+  restart(){
+      document.querySelector('.cell1')!.innerHTML = "";
+      document.querySelector('.cell2')!.innerHTML = "";
+      document.querySelector('.cell3')!.innerHTML = "";
+      document.querySelector('.cell4')!.innerHTML = "";
+      document.querySelector('.cell5')!.innerHTML = "";
+      document.querySelector('.cell6')!.innerHTML = "";
+      document.querySelector('.cell7')!.innerHTML = "";
+      document.querySelector('.cell8')!.innerHTML = "";
+      document.querySelector('.cell9')!.innerHTML = "";
+
+  }
   ngOnInit(): void {
   }
-
 }
