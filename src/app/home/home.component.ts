@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
       else if(document.querySelector('.cell1')!.innerHTML == ""){
         if(this.element === "X"){
           document.querySelector('.cell1')!.innerHTML = "O";
+          this.element =  document.querySelector('.cell1')!.innerHTML;
         }
         else{
           document.querySelector('.cell1')!.innerHTML = "X";
@@ -65,6 +66,7 @@ export class HomeComponent implements OnInit {
     if(document.querySelector('.cell2')!.innerHTML == ""){
       if(this.element === "X"){
         document.querySelector('.cell2')!.innerHTML = "O";
+        this.element =  document.querySelector('.cell2')!.innerHTML;
       }
       else{
         document.querySelector('.cell2')!.innerHTML = "X";
