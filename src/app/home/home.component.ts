@@ -13,24 +13,6 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  // c1 = document.body.querySelector("cell1") as any;
-  // c2 = document.body.querySelector("cell2") as any;
-  // c3 = document.body.querySelector("cell3") as any;
-  // c4 = document.body.querySelector("cell4") as any;
-  // c5 = document.body.querySelector("cell5") as any;
-  // c6 = document.body.querySelector("cell6") as any;
-  // c7 = document.body.querySelector("cell7") as any;
-  // c8 = document.body.querySelector("cell8") as any;
-  // c9 = document.body.querySelector("cell9") as any;
-
-  value3 : any = "";
-  value4 : any = "";
-  value5 : any = "";
-  value6 : any = "";
-  value7 : any = "";
-  value8 : any = "";
-  value9 : any = "";
-
   element : any;
 
   arr : any = ["X", "O"];
