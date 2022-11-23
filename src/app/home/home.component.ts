@@ -7,23 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  opponent : any = 0;
-  you : number = 0;
-  current : number = 0;
+  count : number = 0;
+  decision : string = '';
+  flag_win : boolean = false;
+  flag_draw : boolean = false;
+
 
   constructor() { }
 
   element : any;
-
-  arr : any = ["X", "O"];
-
   val : any = "X";
 
   show1(){
-      if(this.current == 0){
+      if(this.count == 0){
         this.element = this.val;
         document.querySelector('.cell1')!.innerHTML = this.element;
-        this.current++;
+        this.count++;
       }
       else if(document.querySelector('.cell1')!.innerHTML == ""){
         if(this.element === "X"){
@@ -34,18 +33,18 @@ export class HomeComponent implements OnInit {
           document.querySelector('.cell1')!.innerHTML = "X";
           this.element = document.querySelector('.cell1')!.innerHTML;
         }
+        this.count++;
+        this.finish();
       }  
-      this.current++;
-      this.finish();
   }
 
   show2(){
-    if(this.current == 0){
+    if(this.count == 0){
       this.element = this.val;
       document.querySelector('.cell2')!.innerHTML = this.element;
-      this.current++;
+      this.count++;
     }
-    if(document.querySelector('.cell2')!.innerHTML == ""){
+    else if(document.querySelector('.cell2')!.innerHTML == ""){
       if(this.element === "X"){
         document.querySelector('.cell2')!.innerHTML = "O";
         this.element =  document.querySelector('.cell2')!.innerHTML;
@@ -54,18 +53,18 @@ export class HomeComponent implements OnInit {
         document.querySelector('.cell2')!.innerHTML = "X";
         this.element = document.querySelector('.cell2')!.innerHTML;
       }
-      this.current++;
+      this.count++;
       this.finish();  
     }
   }
 
   show3(){
-    if(this.current == 0){
+    if(this.count == 0){
       this.element = this.val;
        document.querySelector('.cell3')!.innerHTML = this.element;
-      this.current++;
+      this.count++;
     }
-    if( document.querySelector('.cell3')!.innerHTML == ""){
+    else if( document.querySelector('.cell3')!.innerHTML == ""){
       if(this.element === "X"){
          document.querySelector('.cell3')!.innerHTML = "O"
         this.element =  document.querySelector('.cell3')!.innerHTML;
@@ -74,17 +73,17 @@ export class HomeComponent implements OnInit {
          document.querySelector('.cell3')!.innerHTML = "X"
         this.element =  document.querySelector('.cell3')!.innerHTML;
       }
-      this.current++;
+      this.count++;
       this.finish();
     }
   }
   show4(){
-    if(this.current == 0){
+    if(this.count == 0){
       this.element = this.val;
        document.querySelector('.cell4')!.innerHTML = this.element;
-      this.current++;
+      this.count++;
     }
-    if( document.querySelector('.cell4')!.innerHTML == ""){
+    else if( document.querySelector('.cell4')!.innerHTML == ""){
       if(this.element === "X"){
          document.querySelector('.cell4')!.innerHTML = "O"
         this.element =  document.querySelector('.cell4')!.innerHTML;
@@ -93,17 +92,17 @@ export class HomeComponent implements OnInit {
          document.querySelector('.cell4')!.innerHTML = "X"
         this.element =  document.querySelector('.cell4')!.innerHTML;
       }
-      this.current++;
+      this.count++;
       this.finish();
     }
   }
   show5(){
-    if(this.current == 0){
+    if(this.count == 0){
       this.element = this.val;
        document.querySelector('.cell5')!.innerHTML = this.element;
-      this.current++;
+      this.count++;
     }
-    if( document.querySelector('.cell5')!.innerHTML == ""){
+    else if( document.querySelector('.cell5')!.innerHTML == ""){
       if(this.element === "X"){
          document.querySelector('.cell5')!.innerHTML = "O"
         this.element =  document.querySelector('.cell5')!.innerHTML;
@@ -112,17 +111,17 @@ export class HomeComponent implements OnInit {
          document.querySelector('.cell5')!.innerHTML = "X"
         this.element =  document.querySelector('.cell5')!.innerHTML;
       }
-      this.current++;
+      this.count++;
       this.finish();
     }
   }
   show6(){
-    if(this.current == 0){
+    if(this.count == 0){
       this.element = this.val;
        document.querySelector('.cell6')!.innerHTML = this.element;
-      this.current++;
+      this.count++;
     }
-    if( document.querySelector('.cell6')!.innerHTML == ""){
+    else if( document.querySelector('.cell6')!.innerHTML == ""){
       if(this.element === "X"){
          document.querySelector('.cell6')!.innerHTML = "O"
         this.element =  document.querySelector('.cell6')!.innerHTML;
@@ -131,17 +130,17 @@ export class HomeComponent implements OnInit {
          document.querySelector('.cell6')!.innerHTML = "X"
         this.element =  document.querySelector('.cell6')!.innerHTML;
       }
-      this.current++;
+      this.count++;
       this.finish();
     }
   }
   show7(){
-    if(this.current == 0){
+    if(this.count == 0){
       this.element = this.val;
        document.querySelector('.cell7')!.innerHTML = this.element;
-      this.current++;
+      this.count++;
     }
-    if( document.querySelector('.cell7')!.innerHTML == ""){
+    else if( document.querySelector('.cell7')!.innerHTML == ""){
       if(this.element === "X"){
          document.querySelector('.cell7')!.innerHTML = "O"
         this.element =  document.querySelector('.cell7')!.innerHTML;
@@ -150,17 +149,17 @@ export class HomeComponent implements OnInit {
          document.querySelector('.cell7')!.innerHTML = "X"
         this.element =  document.querySelector('.cell7')!.innerHTML;
       }
-      this.current++;
+      this.count++;
       this.finish();
     }
   }
   show8(){
-    if(this.current == 0){
+    if(this.count == 0){
       this.element = this.val;
        document.querySelector('.cell8')!.innerHTML = this.element;
-      this.current++;
+      this.count++;
     }
-    if( document.querySelector('.cell8')!.innerHTML == ""){
+    else if( document.querySelector('.cell8')!.innerHTML == ""){
       if(this.element === "X"){
          document.querySelector('.cell8')!.innerHTML = "O"
         this.element =  document.querySelector('.cell8')!.innerHTML;
@@ -169,17 +168,17 @@ export class HomeComponent implements OnInit {
          document.querySelector('.cell8')!.innerHTML = "X"
         this.element =  document.querySelector('.cell8')!.innerHTML;
       }
-      this.current++; 
+      this.count++; 
       this.finish();
     }
   }
   show9(){
-    if(this.current == 0){
+    if(this.count == 0){
       this.element = this.val;
        document.querySelector('.cell9')!.innerHTML = this.element;
-      this.current++;
+      this.count++;
     }
-    if( document.querySelector('.cell9')!.innerHTML == ""){
+    else if( document.querySelector('.cell9')!.innerHTML == ""){
       if(this.element === "X"){
          document.querySelector('.cell9')!.innerHTML = "O"
         this.element =  document.querySelector('.cell9')!.innerHTML;
@@ -188,30 +187,52 @@ export class HomeComponent implements OnInit {
          document.querySelector('.cell9')!.innerHTML = "X"
         this.element =  document.querySelector('.cell9')!.innerHTML;
       }
-      this.current++; 
+      this.count++; 
       this.finish();
     }
   }
 
+  popup(){
+    document.querySelector('.popup')?.classList.add("open-pop");
+  }
+
+  close(){
+    document.querySelector('.popup')?.classList.remove("open-pop");
+  }
+
   finish(){
-      if((
-        (document.querySelector('.cell1')!.innerHTML !== "" &&  document.querySelector('.cell2')!.innerHTML !== "" &&  document.querySelector('.cell3')!.innerHTML !== "") && 
-      (document.querySelector('.cell1')!.innerHTML ===  document.querySelector('.cell2')!.innerHTML &&  document.querySelector('.cell2')!.innerHTML ===  document.querySelector('.cell3')!.innerHTML)) || 
-      (( document.querySelector('.cell4')!.innerHTML !== "" &&  document.querySelector('.cell5')!.innerHTML !== "" &&  document.querySelector('.cell6')!.innerHTML !== "") && ( document.querySelector('.cell4')!.innerHTML ===  document.querySelector('.cell5')!.innerHTML &&  document.querySelector('.cell5')!.innerHTML ===  document.querySelector('.cell6')!.innerHTML)) || 
-      (( document.querySelector('.cell7')!.innerHTML !== "" &&  document.querySelector('.cell8')!.innerHTML !== "" &&  document.querySelector('.cell9')!.innerHTML !== "") && ( document.querySelector('.cell7')!.innerHTML ===  document.querySelector('.cell8')!.innerHTML &&  document.querySelector('.cell8')!.innerHTML ===  document.querySelector('.cell9')!.innerHTML)) || 
-      ((document.querySelector('.cell1')!.innerHTML !== "" &&  document.querySelector('.cell4')!.innerHTML !== "" &&  document.querySelector('.cell7')!.innerHTML !== "") && (document.querySelector('.cell1')!.innerHTML ===  document.querySelector('.cell4')!.innerHTML &&  document.querySelector('.cell4')!.innerHTML ===  document.querySelector('.cell7')!.innerHTML)) || 
-      (( document.querySelector('.cell2')!.innerHTML !== "" &&  document.querySelector('.cell5')!.innerHTML !== "" &&  document.querySelector('.cell8')!.innerHTML !== "") && ( document.querySelector('.cell2')!.innerHTML ===  document.querySelector('.cell5')!.innerHTML &&  document.querySelector('.cell5')!.innerHTML ===  document.querySelector('.cell8')!.innerHTML)) || 
-      (( document.querySelector('.cell3')!.innerHTML !== "" &&  document.querySelector('.cell6')!.innerHTML !== "" &&  document.querySelector('.cell9')!.innerHTML !== "") && ( document.querySelector('.cell3')!.innerHTML ===  document.querySelector('.cell6')!.innerHTML &&  document.querySelector('.cell6')!.innerHTML ===  document.querySelector('.cell9')!.innerHTML)) ||
-      ((document.querySelector('.cell1')!.innerHTML !== "" &&  document.querySelector('.cell5')!.innerHTML !== "" &&  document.querySelector('.cell9')!.innerHTML !== "") && (document.querySelector('.cell1')!.innerHTML ===  document.querySelector('.cell5')!.innerHTML &&  document.querySelector('.cell5')!.innerHTML ===  document.querySelector('.cell9')!.innerHTML)) ||
-      (( document.querySelector('.cell3')!.innerHTML !== "" &&  document.querySelector('.cell5')!.innerHTML !== "" &&  document.querySelector('.cell7')!.innerHTML !== "") && ( document.querySelector('.cell3')!.innerHTML ===  document.querySelector('.cell5')!.innerHTML &&  document.querySelector('.cell5')!.innerHTML ===  document.querySelector('.cell7')!.innerHTML))
+      if(
+        ((document.querySelector('.cell1')!.innerHTML !== "" &&  document.querySelector('.cell2')!.innerHTML !== "" &&  document.querySelector('.cell3')!.innerHTML !== "") && (document.querySelector('.cell1')!.innerHTML ===  document.querySelector('.cell2')!.innerHTML &&  document.querySelector('.cell2')!.innerHTML ===  document.querySelector('.cell3')!.innerHTML)) || 
+        ((document.querySelector('.cell1')!.innerHTML !== "" &&  document.querySelector('.cell4')!.innerHTML !== "" &&  document.querySelector('.cell7')!.innerHTML !== "") && (document.querySelector('.cell1')!.innerHTML ===  document.querySelector('.cell4')!.innerHTML &&  document.querySelector('.cell4')!.innerHTML ===  document.querySelector('.cell7')!.innerHTML)) || 
+
+        (( document.querySelector('.cell4')!.innerHTML !== "" &&  document.querySelector('.cell5')!.innerHTML !== "" &&  document.querySelector('.cell6')!.innerHTML !== "") && ( document.querySelector('.cell4')!.innerHTML ===  document.querySelector('.cell5')!.innerHTML &&  document.querySelector('.cell5')!.innerHTML ===  document.querySelector('.cell6')!.innerHTML)) || 
+
+        (( document.querySelector('.cell7')!.innerHTML !== "" &&  document.querySelector('.cell8')!.innerHTML !== "" &&  document.querySelector('.cell9')!.innerHTML !== "") && ( document.querySelector('.cell7')!.innerHTML ===  document.querySelector('.cell8')!.innerHTML &&  document.querySelector('.cell8')!.innerHTML ===  document.querySelector('.cell9')!.innerHTML)) || 
+
+        (( document.querySelector('.cell2')!.innerHTML !== "" &&  document.querySelector('.cell5')!.innerHTML !== "" &&  document.querySelector('.cell8')!.innerHTML !== "") && ( document.querySelector('.cell2')!.innerHTML ===  document.querySelector('.cell5')!.innerHTML &&  document.querySelector('.cell5')!.innerHTML ===  document.querySelector('.cell8')!.innerHTML)) || 
+
+        (( document.querySelector('.cell3')!.innerHTML !== "" &&  document.querySelector('.cell6')!.innerHTML !== "" &&  document.querySelector('.cell9')!.innerHTML !== "") && ( document.querySelector('.cell3')!.innerHTML ===  document.querySelector('.cell6')!.innerHTML &&  document.querySelector('.cell6')!.innerHTML ===  document.querySelector('.cell9')!.innerHTML)) ||
+
+        ((document.querySelector('.cell1')!.innerHTML !== "" &&  document.querySelector('.cell5')!.innerHTML !== "" &&  document.querySelector('.cell9')!.innerHTML !== "") && (document.querySelector('.cell1')!.innerHTML ===  document.querySelector('.cell5')!.innerHTML &&  document.querySelector('.cell5')!.innerHTML ===  document.querySelector('.cell9')!.innerHTML)) || 
+
+        (( document.querySelector('.cell3')!.innerHTML !== "" &&  document.querySelector('.cell5')!.innerHTML !== "" &&  document.querySelector('.cell7')!.innerHTML !== "") && ( document.querySelector('.cell3')!.innerHTML ===  document.querySelector('.cell5')!.innerHTML &&  document.querySelector('.cell5')!.innerHTML ===  document.querySelector('.cell7')!.innerHTML))
       ){
         console.log("WIN");
-        // this.restart();
-        this.you = this.you + 1;
+        this.decision = "WIN"
+        this.flag_win = true;
+        // this.you = this.you + 1;
+        // console.log(this.count);
+        this.popup();
       }
-      else if(this.current == 9){
+      else if(this.count == 9){
         console.log("Draw");
-        // this.restart();
+        this.decision = "DRAW"
+        this.flag_draw = true;
+        // console.log(this.count);
+        this.popup();
+      }
+      else{
+        console.log(this.count);
       }
   }
 
@@ -225,7 +246,12 @@ export class HomeComponent implements OnInit {
       document.querySelector('.cell7')!.innerHTML = "";
       document.querySelector('.cell8')!.innerHTML = "";
       document.querySelector('.cell9')!.innerHTML = "";
-
+      this.close();
+      this.decision = "";
+      this.count = 0;
+      this.flag_win = false;
+      this.flag_draw = false;
+      
   }
   ngOnInit(): void {
   }

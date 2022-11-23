@@ -3,55 +3,38 @@
         <title>MainPage</title>
     </head>
     <body class="container">
-
         <div class="main">
-            <p class="title">Tic-Tac-Toe</p>
-<!-- 
-            <div class="row1">
-                <div class="v1"></div>
-                <div class="v2"></div>
-            </div>
-
-            <button class="b1">{{value}}</button>
-            <button class="b1">{{value}}</button>
-            <button class="b1">{{value}}</button>
-            <button class="b1">{{value}}</button>
-            <button class="b1">{{value}}</button>
-            <button class="b1">{{value}}</button>
-            <button class="b1">{{value}}</button>
-            <button class="b1">{{value}}</button>
-            <button class="b1">{{value}}</button>
-
-            <div class="horizontal">
-                <div class="h1"></div>
-                <div class="h2"></div>    
-            </div>
--->
-            <div class="points">
-                <p>You: {{you}}</p>
-                <p>Opponent: {{opponent}}</p>
-            </div> 
-            
+            <p class="title"><span>X</span>Tic-Tac-Toe<span>O</span></p>
             <div class="board">
-                <div class="row1">
-                    <div class="cell1" (click)="show1()"></div>
-                    <div class="cell2" (click)="show2()"></div>
-                    <div class="cell3" (click)="show3()"></div>
-                </div>
-                
-                <div class="row1">
-                    <div class="cell4" (click)="show4()"></div>
-                    <div class="cell5" (click)="show5()"></div>
-                    <div class="cell6" (click)="show6()"></div>
-                </div>
-
-                <div class="row1">
-                    <div class="cell7" (click)="show7()"></div>
-                    <div class="cell8" (click)="show8()"></div>
-                    <div class="cell9" (click)="show9()"></div>
-                </div>
+                <table class="table-box">
+                    <tr class="row1">
+                        <td class="cell1" (click)="show1()"></td>
+                        <td class="cell2" (click)="show2()"></td>
+                        <td class="cell3" (click)="show3()"></td>
+                    </tr>
+                    <tr class="row1">
+                        <td class="cell4" (click)="show4()"></td>
+                        <td class="cell5" (click)="show5()"></td>
+                        <td class="cell6" (click)="show6()"></td>
+                    </tr>
+                    <tr class="row1">
+                        <td class="cell7" (click)="show7()"></td>
+                        <td class="cell8" (click)="show8()"></td>
+                        <td class="cell9" (click)="show9()"></td>
+                    </tr>
+                </table>
             </div>
-            
+
+            <div class="popup">
+                <div class="points">
+                    <img src="/assets/win.gif" *ngIf="flag_win === true"/>
+                    <img src="/assets/draw.gif" *ngIf="flag_draw === true" class="image"/>
+                    <p *ngIf="flag_win === true">Congratulations!!</p>
+                    <p>It's a {{decision}}!!</p>
+                    <button type="button" (click)="restart()" class="restart-btn">RESTART</button>
+                </div>     
+            </div>
+    
         </div>
     </body>
 </html>
