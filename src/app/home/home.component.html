@@ -5,6 +5,7 @@
     <body class="container">
         <div class="main">
             <p class="title"><span>X</span>Tic-Tac-Toe<span>O</span></p>
+
             <div class="board">
                 <table class="table-box">
                     <tr class="row1">
@@ -33,6 +34,12 @@
                     <p>It's a {{decision}}!!</p>
                     <button type="button" (click)="restart()" class="restart-btn">RESTART</button>
                 </div>     
+            </div>
+
+            <div class="play">
+                <div class="play-btn">
+                    <button type="button" routerLink="/" class="home-btn">HOME</button>
+                </div>
             </div>
     
         </div>

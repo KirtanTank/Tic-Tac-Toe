@@ -77,6 +77,7 @@ export class HomeComponent implements OnInit {
       this.finish();
     }
   }
+
   show4(){
     if(this.count == 0){
       this.element = this.val;
@@ -96,6 +97,7 @@ export class HomeComponent implements OnInit {
       this.finish();
     }
   }
+
   show5(){
     if(this.count == 0){
       this.element = this.val;
@@ -115,6 +117,7 @@ export class HomeComponent implements OnInit {
       this.finish();
     }
   }
+
   show6(){
     if(this.count == 0){
       this.element = this.val;
@@ -134,6 +137,7 @@ export class HomeComponent implements OnInit {
       this.finish();
     }
   }
+
   show7(){
     if(this.count == 0){
       this.element = this.val;
@@ -153,6 +157,7 @@ export class HomeComponent implements OnInit {
       this.finish();
     }
   }
+
   show8(){
     if(this.count == 0){
       this.element = this.val;
@@ -172,6 +177,7 @@ export class HomeComponent implements OnInit {
       this.finish();
     }
   }
+  
   show9(){
     if(this.count == 0){
       this.element = this.val;
