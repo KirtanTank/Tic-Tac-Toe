@@ -75,7 +75,7 @@ td{
 }
 
 .popup{
-    width: 400px;
+    width: 430px;
     height: 455px;
     padding: 20px;
     background-color: #ffffffca;
@@ -88,24 +88,24 @@ td{
     z-index: 99;
     top: 45%;
     left: 50%;
+    text-align: center;
 }
 
 .open-pop{
     transform: translate(-50%, -50%) scale(1);
     visibility: visible;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .image{
     width: 250px;
-    text-align: center;
 }
 
 .points{
     width: 450px;
     font-size: 40px;
     color: black;
-    text-align: center;
+    
 
 }
 

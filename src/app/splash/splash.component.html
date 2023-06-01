@@ -9,7 +9,10 @@
 </head>
 <body>
     <div class="main">
-        <button class="start" routerLink="Play">GO</button>
+        <p class="line">Choose Your Favorite Symbols!</p>
+        <input type="text" #play1 (keyup)="getValue1(play1.value)" [ngStyle]="{'border-color': checkVal1.length > 1 ? 'red' : 'white' }" class="player1">
+        <input type="text" #play2 (keyup)="getValue2(play2.value)" [ngStyle]="{'border-color': checkVal2.length > 1 ? 'red' : 'white' }" class="player2">
+        <button class="start" (click)="startGame()"><b>GO</b></button>
     </div>
 </body>
 </html>
