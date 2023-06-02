@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataServiceService } from '../service/data-service.service';
 
 @Component({
   selector: 'app-home',
@@ -13,24 +14,27 @@ export class HomeComponent implements OnInit {
   flag_draw : boolean = false;
 
 
-  constructor() { }
+  constructor(public service : DataServiceService) { }
 
   element : any;
   val : any = "X";
 
+  symbol1 : any = this.service.value1;
+  symbol2 : any = this.service.value2;
+
   show1(){
       if(this.count == 0){
-        this.element = this.val;
+        this.element = this.symbol1;
         document.querySelector('.cell1')!.innerHTML = this.element;
         this.count++;
       }
       else if(document.querySelector('.cell1')!.innerHTML == ""){
-        if(this.element === "X"){
-          document.querySelector('.cell1')!.innerHTML = "O";
+        if(this.element === this.symbol1){
+          document.querySelector('.cell1')!.innerHTML = this.symbol2;
           this.element =  document.querySelector('.cell1')!.innerHTML;
         }
         else{
-          document.querySelector('.cell1')!.innerHTML = "X";
+          document.querySelector('.cell1')!.innerHTML = this.symbol1;
           this.element = document.querySelector('.cell1')!.innerHTML;
         }
         this.count++;
@@ -40,17 +44,17 @@ export class HomeComponent implements OnInit {
 
   show2(){
     if(this.count == 0){
-      this.element = this.val;
+      this.element = this.symbol1;
       document.querySelector('.cell2')!.innerHTML = this.element;
       this.count++;
     }
     else if(document.querySelector('.cell2')!.innerHTML == ""){
-      if(this.element === "X"){
-        document.querySelector('.cell2')!.innerHTML = "O";
+      if(this.element === this.symbol1){
+        document.querySelector('.cell2')!.innerHTML = this.symbol2;
         this.element =  document.querySelector('.cell2')!.innerHTML;
       }
       else{
-        document.querySelector('.cell2')!.innerHTML = "X";
+        document.querySelector('.cell2')!.innerHTML = this.symbol1;
         this.element = document.querySelector('.cell2')!.innerHTML;
       }
       this.count++;
@@ -60,17 +64,17 @@ export class HomeComponent implements OnInit {
 
   show3(){
     if(this.count == 0){
-      this.element = this.val;
+      this.element = this.symbol1;
        document.querySelector('.cell3')!.innerHTML = this.element;
       this.count++;
     }
     else if( document.querySelector('.cell3')!.innerHTML == ""){
-      if(this.element === "X"){
-         document.querySelector('.cell3')!.innerHTML = "O"
+      if(this.element === this.symbol1){
+         document.querySelector('.cell3')!.innerHTML = this.symbol2
         this.element =  document.querySelector('.cell3')!.innerHTML;
       }
       else{
-         document.querySelector('.cell3')!.innerHTML = "X"
+         document.querySelector('.cell3')!.innerHTML = this.symbol1
         this.element =  document.querySelector('.cell3')!.innerHTML;
       }
       this.count++;
@@ -80,17 +84,17 @@ export class HomeComponent implements OnInit {
 
   show4(){
     if(this.count == 0){
-      this.element = this.val;
+      this.element = this.symbol1;
        document.querySelector('.cell4')!.innerHTML = this.element;
       this.count++;
     }
     else if( document.querySelector('.cell4')!.innerHTML == ""){
-      if(this.element === "X"){
-         document.querySelector('.cell4')!.innerHTML = "O"
+      if(this.element === this.symbol1){
+         document.querySelector('.cell4')!.innerHTML = this.symbol2
         this.element =  document.querySelector('.cell4')!.innerHTML;
       }
       else{
-         document.querySelector('.cell4')!.innerHTML = "X"
+         document.querySelector('.cell4')!.innerHTML = this.symbol1
         this.element =  document.querySelector('.cell4')!.innerHTML;
       }
       this.count++;
@@ -100,17 +104,17 @@ export class HomeComponent implements OnInit {
 
   show5(){
     if(this.count == 0){
-      this.element = this.val;
+      this.element = this.symbol1;
        document.querySelector('.cell5')!.innerHTML = this.element;
       this.count++;
     }
     else if( document.querySelector('.cell5')!.innerHTML == ""){
-      if(this.element === "X"){
-         document.querySelector('.cell5')!.innerHTML = "O"
+      if(this.element === this.symbol1){
+         document.querySelector('.cell5')!.innerHTML = this.symbol2
         this.element =  document.querySelector('.cell5')!.innerHTML;
       }
       else{
-         document.querySelector('.cell5')!.innerHTML = "X"
+         document.querySelector('.cell5')!.innerHTML = this.symbol1
         this.element =  document.querySelector('.cell5')!.innerHTML;
       }
       this.count++;
@@ -120,17 +124,17 @@ export class HomeComponent implements OnInit {
 
   show6(){
     if(this.count == 0){
-      this.element = this.val;
+      this.element = this.symbol1;
        document.querySelector('.cell6')!.innerHTML = this.element;
       this.count++;
     }
     else if( document.querySelector('.cell6')!.innerHTML == ""){
-      if(this.element === "X"){
-         document.querySelector('.cell6')!.innerHTML = "O"
+      if(this.element === this.symbol1){
+         document.querySelector('.cell6')!.innerHTML = this.symbol2
         this.element =  document.querySelector('.cell6')!.innerHTML;
       }
       else{
-         document.querySelector('.cell6')!.innerHTML = "X"
+         document.querySelector('.cell6')!.innerHTML = this.symbol1
         this.element =  document.querySelector('.cell6')!.innerHTML;
       }
       this.count++;
@@ -140,17 +144,17 @@ export class HomeComponent implements OnInit {
 
   show7(){
     if(this.count == 0){
-      this.element = this.val;
+      this.element = this.symbol1;
        document.querySelector('.cell7')!.innerHTML = this.element;
       this.count++;
     }
     else if( document.querySelector('.cell7')!.innerHTML == ""){
-      if(this.element === "X"){
-         document.querySelector('.cell7')!.innerHTML = "O"
+      if(this.element === this.symbol1){
+         document.querySelector('.cell7')!.innerHTML = this.symbol2
         this.element =  document.querySelector('.cell7')!.innerHTML;
       }
       else{
-         document.querySelector('.cell7')!.innerHTML = "X"
+         document.querySelector('.cell7')!.innerHTML = this.symbol1
         this.element =  document.querySelector('.cell7')!.innerHTML;
       }
       this.count++;
@@ -160,17 +164,17 @@ export class HomeComponent implements OnInit {
 
   show8(){
     if(this.count == 0){
-      this.element = this.val;
+      this.element = this.symbol1;
        document.querySelector('.cell8')!.innerHTML = this.element;
       this.count++;
     }
     else if( document.querySelector('.cell8')!.innerHTML == ""){
-      if(this.element === "X"){
-         document.querySelector('.cell8')!.innerHTML = "O"
+      if(this.element === this.symbol1){
+         document.querySelector('.cell8')!.innerHTML = this.symbol2
         this.element =  document.querySelector('.cell8')!.innerHTML;
       }
       else{
-         document.querySelector('.cell8')!.innerHTML = "X"
+         document.querySelector('.cell8')!.innerHTML = this.symbol1
         this.element =  document.querySelector('.cell8')!.innerHTML;
       }
       this.count++; 
@@ -180,17 +184,17 @@ export class HomeComponent implements OnInit {
   
   show9(){
     if(this.count == 0){
-      this.element = this.val;
+      this.element = this.symbol1;
        document.querySelector('.cell9')!.innerHTML = this.element;
       this.count++;
     }
     else if( document.querySelector('.cell9')!.innerHTML == ""){
-      if(this.element === "X"){
-         document.querySelector('.cell9')!.innerHTML = "O"
+      if(this.element === this.symbol1){
+         document.querySelector('.cell9')!.innerHTML = this.symbol2
         this.element =  document.querySelector('.cell9')!.innerHTML;
       }
       else{
-         document.querySelector('.cell9')!.innerHTML = "X"
+         document.querySelector('.cell9')!.innerHTML = this.symbol1
         this.element =  document.querySelector('.cell9')!.innerHTML;
       }
       this.count++; 
@@ -223,7 +227,7 @@ export class HomeComponent implements OnInit {
 
         (( document.querySelector('.cell3')!.innerHTML !== "" &&  document.querySelector('.cell5')!.innerHTML !== "" &&  document.querySelector('.cell7')!.innerHTML !== "") && ( document.querySelector('.cell3')!.innerHTML ===  document.querySelector('.cell5')!.innerHTML &&  document.querySelector('.cell5')!.innerHTML ===  document.querySelector('.cell7')!.innerHTML))
       ){
-        console.log("WIN");
+        // console.log("WIN");
         this.decision = "WIN"
         this.flag_win = true;
         // this.you = this.you + 1;
@@ -231,7 +235,7 @@ export class HomeComponent implements OnInit {
         this.popup();
       }
       else if(this.count == 9){
-        console.log("Draw");
+        // console.log("Draw");
         this.decision = "DRAW"
         this.flag_draw = true;
         // console.log(this.count);

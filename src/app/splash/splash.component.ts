@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataServiceService } from '../service/data-service.service';
 
 @Component({
   selector: 'app-splash',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SplashComponent implements OnInit {
 
-  constructor(private router : Router) { 
+  constructor(private router : Router, private service : DataServiceService) { 
   }
 
   ngOnInit(): void {
@@ -20,6 +21,7 @@ export class SplashComponent implements OnInit {
   checkVal2 : any;
   condition : any;
 
+  errorLine : string = "";
 
   // Getting the values of input fields
   getValue1(val: any){
@@ -35,16 +37,18 @@ export class SplashComponent implements OnInit {
   startGame(){
     // console.log(this.checkVal1, this.checkVal2);
     if(this.checkVal1 == undefined || this.checkVal2 == undefined){
-      window.alert("Please Select a symbol!!");
+      this.errorLine = "Please Select a symbol!!";
     }
     else if(this.checkVal1.length > 1 || this.checkVal2.length > 1){
-      window.alert("NOT ALLOWED");
+      this.errorLine = "More Than One Character is not Allowed!";
     }
     else if(this.checkVal1 != undefined && this.checkVal2 != undefined && this.checkVal1 === this.checkVal2){
-      window.alert("Please Select a Different Symbol!!");
+      this.errorLine = "Please Select a Different Symbol!!";
     }
     else{
       this.router.navigate(['/', 'Play']);
+      this.service.value1 = this.checkVal1;
+      this.service.value2 = this.checkVal2;
     }
   }
 }

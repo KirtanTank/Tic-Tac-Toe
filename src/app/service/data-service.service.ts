@@ -7,5 +7,6 @@ export class DataServiceService {
 
   constructor() { }
 
-  
+  value1 : string = "";
+  value2 : string = "";
 }

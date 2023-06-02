@@ -38,6 +38,8 @@ html, body{
     color: white;
     text-align: center;
     border-radius: 10px;
+    cursor: pointer;
+    z-index: 99;
 }
 
 .player2{
@@ -47,11 +49,59 @@ html, body{
     position: absolute;
     top: 40%;
     left: 60%;
+    cursor: pointer;
     background: transparent;
     border: 10px solid white;
     color: white;
     text-align: center;
     border-radius: 10px;
+    z-index: 99;
+}
+
+.gif{
+    height: 300px;
+    position: absolute;
+    top: 30%;
+    left: 28%;
+}
+
+.notification{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    visibility: visible;
+}
+
+.image{
+    width: 40px;
+}
+
+.error{
+    padding-left: 10px;
+    color: black;
+    font-family: 'Bebas Neue', cursive;
+}
+.name1{
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    top: 59%;
+    left: 31%;
+}
+
+.name2{
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    top: 59%;
+    left: 61%;
 }
 
 .start {
@@ -61,7 +111,6 @@ html, body{
     box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
     color: green;
     cursor: pointer;
-    
     font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
     padding: 7px 20px;
     text-decoration: none;
@@ -74,8 +123,9 @@ html, body{
     width: 250px;
     height: 60px;
     display: flexbox;
-    top: 60%;
+    top: 70%;
     left: 40%;
+    z-index: 99;
     
         &:hover {
         box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
