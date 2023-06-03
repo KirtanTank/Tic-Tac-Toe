@@ -9,18 +9,38 @@
 </head>
 <body>
     <div class="main">
-        <p class="line">Choose Your Favorite Symbols!</p>
-        <input type="text" #play1 (keyup)="getValue1(play1.value)" [ngStyle]="{'border-color': checkVal1?.length > 1 ? 'red' : 'white' }" class="player1">
-        <p class="name1">Player 1</p>
-        <img src="/assets/vsGIF.gif" class="gif">
-        <input type="text" #play2 (keyup)="getValue2(play2.value)" [ngStyle]="{'border-color': checkVal2?.length > 1 ? 'red' : 'white' }" class="player2">
-        <p class="name2">Player 2</p>
-        <button class="start" (click)="startGame()"><b>GO</b></button>
+        <ul class="lines">
+            <li class="line">The Tic-Tac-Toe Game</li>
+            <li class="line">Noughts and Crosses</li>
+            <li class="line">Play With Your Friends</li>
+            <li class="line">Choose Your Favorite Symbols</li>
+            <li class="line">Play with your own Symbols</li>
+        </ul>
+        <div class="symbol">
+            <div class="sym1">
+                <input type="text" #play1 (keyup)="getValue1(play1.value)" [ngStyle]="{'border-color': checkVal1?.length > 1 ? 'red' : '#002B5B' }" class="player1">
+                <p class="name1">Player 1</p>
+            </div>
+            <img src="/assets/vsGIF.gif" class="gif">
+            <div class="sym2">
+                <input type="text" #play2 (keyup)="getValue2(play2.value)" [ngStyle]="{'border-color': checkVal2?.length > 1 ? 'red' : '#002B5B' }" class="player2">
+                <p class="name2">Player 2</p>
+            </div>
+        </div>
+        <button class="start" (click)="startGame()" role="button">
+            <span class="start-shadow"></span>
+            <span class="start-edge"></span>
+            <span class="start-front text">
+                <b>GO</b>
+            </span>
+        </button>
     </div>
 
     <div class="notification">
-        <img src="/assets/cancel.png" class="image">
-        <p class="error"><b>{{errorLine}}</b></p>
+        <div class="design">
+            <img src="/assets/cancel.png" class="image">
+            <span class="error"><b>{{errorLine}}</b></span>
+        </div>
     </div>
 </body>
 </html>

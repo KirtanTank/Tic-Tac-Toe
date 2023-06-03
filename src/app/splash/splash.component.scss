@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+@font-face {
+    font-family: line-font;
+    src: url(/assets/BoomerTantrum-j88y.ttf);
+}
+
+$font-color: #002B5B;
+$font-family: 'Montserrat', sans-serif;
 
 *{
     margin: 0;
@@ -14,28 +24,75 @@ html, body{
 
 .main{
     height: 100vh;
-    background: linear-gradient(90deg, #000428, #004e92);
+    display: flex;
+    background: #F9F5EB;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.lines{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+    font-family: line-font; 
+    align-items: center;
 }
 
 .line{
+    list-style: none;
     font-size: 50px;
-    color: white;
-    text-align: center;
-    position: absolute;
-    top: 25%;
-    left: 28%;
+    color: $font-color;
+    position: relative;
+    top: 0;
+    width: max-content;
+    font-weight: 500;
+    animation: slide 35s steps(5) infinite;
+
+    &::after{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #F9F5EB;
+        left: 0;
+        border-left: 3px solid $font-color;
+        animation: typing 7s steps(30) infinite;
+    }
+}
+
+@keyframes slide {
+    100%{
+        top: -450px;
+    }
+}
+
+@keyframes typing {
+    40%,60%{
+        left: calc(100%);
+    }
+    100%{
+        left: 0;
+    }
+}
+
+.symbol{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .player1{
     height: 100px;
     width: 100px;
     font-size: 50px;
-    position: absolute;
-    top: 40%;
-    left: 30%;
     background: transparent;
-    border: 10px solid white;
-    color: white;
+    border: 10px solid $font-color;
+    color: $font-color;
     text-align: center;
     border-radius: 10px;
     cursor: pointer;
@@ -46,29 +103,48 @@ html, body{
     height: 100px;
     width: 100px;
     font-size: 50px;
-    position: absolute;
-    top: 40%;
-    left: 60%;
     cursor: pointer;
     background: transparent;
-    border: 10px solid white;
-    color: white;
+    border: 10px solid $font-color;
+    color: $font-color;
     text-align: center;
     border-radius: 10px;
     z-index: 99;
 }
 
+.sym1, .sym2{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 999;
+    font-family: line-font;
+}
 .gif{
     height: 300px;
-    position: absolute;
-    top: 30%;
-    left: 28%;
 }
 
-.notification{
+.name1{
+    color: $font-color;
+    font-size: 30px;
+    text-align: center;
+    font-family: line-font;
+    margin-top: 20px;
+}
+
+.name2{
+    color: $font-color;
+    font-size: 30px;
+    text-align: center;
+    font-family: line-font;
+    margin-top: 20px;
+}
+
+.design{
     display: flex;
     flex-direction: row;
-    background-color: white;
+    background-color: $font-color;
     width: fit-content;
     border-radius: 10px;
     padding: 10px;
@@ -76,59 +152,142 @@ html, body{
     top: 20px;
     right: 20px;
     font-size: 30px;
-    visibility: visible;
+    position: fixed;
+    visibility: hidden;
+    overflow: hidden;
+    color: #F9F5EB;
 }
 
 .image{
-    width: 40px;
+    width: 30px;
 }
 
 .error{
     padding-left: 10px;
-    color: black;
-    font-family: 'Bebas Neue', cursive;
-}
-.name1{
-    position: absolute;
-    color: white;
-    font-size: 30px;
-    top: 59%;
-    left: 31%;
+    font-family: $font-family;
+    font-size: 20px;
 }
 
-.name2{
-    position: absolute;
-    color: white;
-    font-size: 30px;
-    top: 59%;
-    left: 61%;
+.notification--show{
+    animation: fade 2s linear;
+    visibility: visible;
+    opacity: 1;
+    overflow: hidden;
+}
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }
 
 .start {
-    position: absolute;
-    background-color: #c2fbd7;
-    border-radius: 100px;
-    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
-    color: green;
-    cursor: pointer;
-    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-    padding: 7px 20px;
-    text-decoration: none;
-    transition: all 250ms;
-    border: 0;
-    font-size: 26px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 250px;
-    height: 60px;
-    display: flexbox;
-    top: 70%;
-    left: 40%;
-    z-index: 99;
-    
-        &:hover {
-        box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-        transform: scale(1.05) rotate(-1deg);
-        }
-    }
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.start-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.start-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.start-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: $font-color;
+  background: hsl(360deg, 78%, 62%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .start-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.start:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.start:hover .start-front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.start:active .start-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.start:hover .start-shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.start:active .start-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.start:focus:not(:focus-visible) {
+  outline: none;
+}

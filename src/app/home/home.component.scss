@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+@font-face {
+    font-family: line-font;
+    src: url(/assets/BoomerTantrum-j88y.ttf);
+}
 
 
 $color: black;
-$font-color: white;
+$font-color: #E4DCCF;
 $cell-width: 140px;
+$odd-cell-color: #EA5455;
+$even-cell-color: #002B5B; 
 
 *{
     margin: 0;
@@ -15,28 +24,30 @@ $cell-width: 140px;
 .container{
     margin: 0;
     padding: 0;
-    height: 99.2vh;
-    background: linear-gradient(90deg, #000428, #004e92);
+    height: 100vh;
+    background: linear-gradient(45deg, #F9F5EB,#E4DCCF);
 }
 
 .main{
     height: 100%;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .title{
     font-size: 60px;
     width: 100%;
-    color: white;
+    color: $odd-cell-color;
     font-family: 'Bebas Neue', cursive;
-    text-align: center;
     height: 100px;
 }
 
 span{
     padding: 0px 10px;
     font-family: 'Rubik Distressed', cursive;
-    color: rgb(135, 186, 222);
+    color: $even-cell-color;
 }
 
 .board{
@@ -53,13 +64,13 @@ span{
 }
 
 .cell2, .cell4, .cell6, .cell8{
-    background-color: #F9858B;
-    color: #E1E1E5;
+    background-color: $even-cell-color;
+    color: $font-color;
 } 
 
 .cell1, .cell3, .cell5, .cell7, .cell9{
-    background-color: #EF525A;
-    color: #5E6170;
+    background-color: $odd-cell-color;
+    color: $font-color;
 }
 
 td{
@@ -78,8 +89,8 @@ td{
     width: 430px;
     height: 455px;
     padding: 20px;
-    background-color: #ffffffca;
-    border-radius: 10px;
+    background-color: white;
+    border-radius: 20px;
     position: absolute;
     transform: translate(-50%, -50%) scale(0);
     visibility: hidden;
@@ -105,26 +116,50 @@ td{
     width: 450px;
     font-size: 40px;
     color: black;
-    
-
+    font-family: line-font;
 }
 
-.restart-btn{
-    width: 150px;
-    height: 50px;
-    color: white;
-    border-radius: 10px;
-    border: 5px solid white;
-    transition: 0.8s;
-    background-color: black;
-    font-size: 20px;
-    font-family: monospace;
+.restart{
+    width: 250px;
+    appearance: none;
+    background-color: #FFFFFF;
+    border-radius: 40em;
+    border-style: none;
+    box-shadow: #ADCFFF 0 -12px 6px inset;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -.24px;
+    margin: 0;
+    outline: none;
+    padding: 1rem 1.3rem;
+    quotes: auto;
     text-align: center;
+    text-decoration: none;
+    transition: all .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: 20px;
 
-    &:hover{
-        background-color: white;
-        color: black;
-        border-color: black;
+    &:hover {
+        background-color: #EA5455;
+        box-shadow: #002B5B 0 -6px 8px inset;
+        transform: scale(1.125);
+    }
+    &:active {
+    transform: scale(1.025);
+    }
+
+    @media (min-width: 768px) {
+        .button-73 {
+            font-size: 1.5rem;
+            padding: .75rem 2rem;
+        }
     }
 }
 
@@ -156,8 +191,8 @@ td{
     -webkit-user-select: none;
     touch-action: manipulation;
     &:hover {
-    background-color: #FFC229;
-    box-shadow: #FF6314 0 -6px 8px inset;
+    background-color: #EA5455;
+    box-shadow: #002B5B 0 -6px 8px inset;
     transform: scale(1.125);
     }
 

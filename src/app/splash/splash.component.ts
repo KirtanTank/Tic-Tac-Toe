@@ -33,17 +33,41 @@ export class SplashComponent implements OnInit {
     console.log(this.checkVal2.length);
   }
 
+  // addNotification(valueStr : any){
+  //   const notification = document.querySelector(".notification");
+  //   const toast = document.createElement("div");
+  //     toast.className = `design`;
+  //     toast.innerHTML = `
+  //     <img src="/assets/cancel.png" class="image">
+  //     <span class="error"><b>${valueStr}</b></span>`;
+  //     notification?.appendChild(toast);
+  // }
   // check the input field 
   startGame(){
-    // console.log(this.checkVal1, this.checkVal2);
+    const design = document.querySelector(".design");
     if(this.checkVal1 == undefined || this.checkVal2 == undefined){
       this.errorLine = "Please Select a symbol!!";
+      // this.addNotification(this.errorLine);
+      design?.classList.add("notification--show");
+      setTimeout(() => {
+        design?.classList.remove("notification--show");
+      }, 2000);
     }
     else if(this.checkVal1.length > 1 || this.checkVal2.length > 1){
       this.errorLine = "More Than One Character is not Allowed!";
+      // this.addNotification(this.errorLine);
+      design?.classList.add("notification--show");
+      setTimeout(() => {
+        design?.classList.remove("notification--show");
+      }, 2000);
     }
     else if(this.checkVal1 != undefined && this.checkVal2 != undefined && this.checkVal1 === this.checkVal2){
       this.errorLine = "Please Select a Different Symbol!!";
+      // this.addNotification(this.errorLine);
+      design?.classList.add("notification--show");
+      setTimeout(() => {
+        design?.classList.remove("notification--show");
+      }, 2000);
     }
     else{
       this.router.navigate(['/', 'Play']);
