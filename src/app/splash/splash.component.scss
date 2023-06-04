@@ -172,7 +172,7 @@ html, body{
 }
 
 .notification--show{
-    animation: fade 2s linear;
+    animation: fade 1s linear;
     visibility: visible;
     opacity: 1;
     overflow: hidden;
@@ -293,4 +293,25 @@ html, body{
 
 .start:focus:not(:focus-visible) {
   outline: none;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.551);
+}
+
+.foot-img{
+    width: 30px;
+    position: relative;
+    top: 50px;
+}
+
+.attention{
+    font-family: line-font;
+    font-size: 20px;
+    position: relative;
+    top: 50px;
+    left: 10px;
 }

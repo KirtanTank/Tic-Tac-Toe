@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   flag_draw : boolean = false;
 
 
-  constructor(public service : DataServiceService, private router : Router) { }
+  constructor(public service : DataServiceService) { }
 
   element : any;
   val : any = "X";
@@ -259,7 +259,6 @@ export class HomeComponent implements OnInit {
       this.count = 0;
       this.flag_win = false;
       this.flag_draw = false;
-      
   }
   ngOnInit(): void {
   }
