@@ -26,11 +26,11 @@ export class SplashComponent implements OnInit {
   // Getting the values of input fields
   getValue1(val: any){
     this.checkVal1 = val;
-    console.log(this.checkVal1.length);
+    // console.log(this.checkVal1.length);
   }
   getValue2(val: any){
     this.checkVal2 = val;
-    console.log(this.checkVal2.length);
+    // console.log(this.checkVal2.length);
   }
 
   // addNotification(valueStr : any){

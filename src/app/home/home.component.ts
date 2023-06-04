@@ -242,9 +242,6 @@ export class HomeComponent implements OnInit {
         // console.log(this.count);
         this.popup();
       }
-      else{
-        console.log(this.count);
-      }
   }
 
   restart(){
