@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../service/data-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   flag_draw : boolean = false;
 
 
-  constructor(public service : DataServiceService) { }
+  constructor(public service : DataServiceService, private router : Router) { }
 
   element : any;
   val : any = "X";

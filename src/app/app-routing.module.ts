@@ -4,7 +4,7 @@ import { SplashComponent } from './splash/splash.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path:"" ,component: SplashComponent},
+  {path:'' ,component: SplashComponent},
   {path:"Play", component: HomeComponent}
 ];
 

@@ -33,13 +33,13 @@
                     <p *ngIf="flag_win === true">Congratulations!</p>
                     <p *ngIf="flag_draw == true">Good Game!</p>
                     <p>It's a {{decision}}!!</p>
-                    <button class="restart" (click)="restart()" role="button">Restart</button>
+                    <button class="restart" (click)="restart()" role="button">RESTART</button>
                 </div>     
             </div>
 
             <div class="play">
                 <div class="play-btn">
-                    <button type="button" routerLink="/" class="home-btn">HOME</button>
+                    <button type="button" routerLink="/" #home class="home-btn">HOME</button>
                 </div>
             </div>
     

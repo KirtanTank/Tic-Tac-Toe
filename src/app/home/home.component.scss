@@ -89,7 +89,7 @@ td{
     width: 430px;
     height: 455px;
     padding: 20px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.818);
     border-radius: 20px;
     position: absolute;
     transform: translate(-50%, -50%) scale(0);
@@ -122,10 +122,10 @@ td{
 .restart{
     width: 250px;
     appearance: none;
-    background-color: #FFFFFF;
+    background-color: #F9F5EB;
     border-radius: 40em;
     border-style: none;
-    box-shadow: #ADCFFF 0 -12px 6px inset;
+    box-shadow: $font-color 0 -12px 6px inset;
     box-sizing: border-box;
     color: #000000;
     cursor: pointer;
